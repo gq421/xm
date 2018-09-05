@@ -150,7 +150,7 @@
 }
 .header .nav .item-box{
 	width: 100%;
-	height: 234px;
+	height: 210px;
 	position: absolute;
 	left: 0;
 	z-index: 999;
@@ -587,6 +587,8 @@
 	border:1px solid #333;
 	float: right;
 	margin-top: 15px;
+	background: #fff;
+	outline: none;
 }
 .box .box-kuai{
 	width: 100%;
@@ -859,30 +861,45 @@ del{
 	height: 42px;
 	float: right;
 }
-.box1 .mor .tab1:nth-child(1){
-	/* width: 32px;
-	height: 26px; */
-	display: block;	
-	color: #ff6700;
-	border-bottom: 2px solid #ff6700;
-	margin: 15px 0 0 30px;		
-	float: left;
-	text-decoration: none;
-}
 .box1 .mor .tab1{
-	
 	color: #333;
 	float: left;
 	margin: 15px 0 0 30px;
 	text-decoration: none;	
 }
-.box1 .mor a:hover {
+.box1 .mor .tab1-active{
+	/* width: 32px;
+	height: 26px; */
+	display: block;
 	color: #ff6700;
 	border-bottom: 2px solid #ff6700;
 }
 .box1 .container .box2{
 	width: 100%;
 	height: 628px;
+	position: relative;
+}
+.box1 .box2 .box2-one{
+	float: left;
+}
+.box1 .box2 .box2-bt{
+	width: 234px;
+	height: 300px;
+	margin-right: 14px;
+	margin-bottom: 14px;
+	transition: all.3s;
+}
+.box1 .box2 .box2-bt:hover{
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+	transform: translateY(-3px);
+}
+.box1 .box2 .box2-two{
+	width: 978px;
+	height: 628px;
+	position: absolute;
+	top:0;
+	left: 248px;
+	display: none;
 }
 .box1 .container .box2 .box2-bd{
 	width: 234px;
@@ -934,7 +951,7 @@ del{
 	margin: 0 auto;
 
 }
-.box1 .container .box2 .box2-bd:nth-child(5){
+.box1 .container .box2 .box2-bd:nth-child(4){
 	margin-right: 0;
 }
 .box1 .container .box2 .box2-b{
@@ -1049,6 +1066,8 @@ del{
 	float: left;
 }
 .box1 .container .box-hd button{
+	background: #fff;
+	outline: none;
 	width: 40px;
 	height: 25px;
 	border:1px solid #333;
@@ -1520,6 +1539,7 @@ del{
 	width: 100%;
 	height: 166px;
 	background: #FAFAF9;
+	overflow: hidden;
 }
 .sit-info .container .con{
 	width: 100%;
@@ -1620,6 +1640,8 @@ del{
 	line-height: 41px;
 	text-align: center;
 	background-color: #fff;
+	cursor:pointer;
+	display: none;
 }
 .bar-s .bar-totop:hover{
 	color: #ff6700;

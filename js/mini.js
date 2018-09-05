@@ -5,7 +5,6 @@ window.onload=function() {
     var link = document.getElementsByClassName("nav-item");
     console.log(lis);
     console.log(son);
-    console.log(item);
 //遍历每个li
     for (let i = 0; i < lis.length; i++) {
 //当鼠标移入每个li的操作
@@ -32,6 +31,7 @@ window.onload=function() {
             item[i].style.display = "none";
         }
     }
+
     // 透明度轮播图
     let imgs = document.querySelectorAll(".imgss");
     let dots = document.querySelectorAll(".progress");
@@ -107,15 +107,15 @@ window.onload=function() {
     let rightBtn1 = document.querySelectorAll(".rightBtn")[1];
     let widths1 = parseInt(getComputedStyle(imgs[0], null).width);
     let lie = document.querySelectorAll(".lie");
-    console.log(rightBtn1);
     banner_dj(imgs1, dots1, banner1, leftBtn1, rightBtn1, widths1, "lie");
-    let imgs2 = document.querySelectorAll(".two");
+    let imgs2 = document.querySelectorAll(".six");
     let dots2 = document.querySelectorAll(".dot2");
     let banner2 = document.querySelectorAll(".lat1")[0];
     let leftBtn2 = document.querySelectorAll(".left1")[0];
     let rightBtn2 = document.querySelectorAll(".right1")[0];
     let widths2 = parseInt(getComputedStyle(imgs2[0], null).width);
     let lie1 = document.querySelectorAll(".lie");
+    console.log(imgs2);
     banner_dj(imgs2, dots2, banner2, leftBtn2, rightBtn2, widths2, "lie");
     let imgs3 = document.querySelectorAll(".sec");
     let dots3 = document.querySelectorAll(".dot3");
@@ -132,7 +132,6 @@ window.onload=function() {
     let rightBtn4 = document.querySelectorAll(".right4")[0];
     let widths4 = parseInt(getComputedStyle(imgs4[0], null).width);
     let lie3 = document.querySelectorAll(".lie");
-    console.log(banner4);
     banner_dj(imgs4, dots4, banner4, leftBtn4, rightBtn4, widths4, "lie");
 
     //为你推荐
@@ -186,5 +185,38 @@ window.onload=function() {
     head_buy.onmouseleave = function () {
         head_buy_box.style.height = 0;
         head_buy_box.style.boxShadow = 'none';
+    }
+
+    //家电模块
+    let tab1=document.querySelectorAll(".tab1");
+    let box2=document.querySelectorAll(".box2-two");
+    tab1[0].classList.add("tab1-active");
+    box2[0].style.display="block";
+    for (let i = 0; i < tab1.length; i++) {
+        //鼠标移入
+        tab1[i].onmouseover = function () {
+            for (let j = 0; j < tab1.length; j++) {
+                tab1[j].classList.remove("tab1-active");
+                //可以改为opacity透明度
+                box2[j].style.display = "none";
+            }
+            tab1[i].classList.add("tab1-active");
+            box2[i].style.display = "block";
+        }
+    }
+
+    let totop=document.querySelectorAll(".bar-totop")[0];
+    totop.onclick=function(){
+        animate(document.body,{scrollTop:0});
+        animate(document.documentElement,{scrollTop:0});
+    }
+    console.log(totop);
+    window.onscroll=function () {
+        let h=document.body.scrollTop||document.documentElement.scrollTop;
+        if (h>1000){
+            totop.style.display="block";
+        } else {
+            totop.style.display="none";
+        }
     }
 }
