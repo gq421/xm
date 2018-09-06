@@ -146,6 +146,7 @@ window.onload=function() {
             times = 2;
         }
         list.style.transform = `translate(${(-w * times)}px)`;
+
     }
     button[3].onclick = function () {
         times--;
@@ -204,7 +205,7 @@ window.onload=function() {
             box2[i].style.display = "block";
         }
     }
-
+    //返回顶部
     let totop=document.querySelectorAll(".bar-totop")[0];
     totop.onclick=function(){
         animate(document.body,{scrollTop:0});
@@ -219,4 +220,20 @@ window.onload=function() {
             totop.style.display="none";
         }
     }
+
+    let pop=document.querySelectorAll(".bar-pop");
+    let sor=document.querySelectorAll(".bar-sor");
+    for (let i = 0; i < sor.length; i++) {
+        //鼠标移入
+        sor[i].onmouseover = function () {
+            for (let j = 0; j < sor.length; j++) {
+                pop[j].style.display = "none";
+            }
+            pop[i].style.display = "block";
+        }
+        sor[i].onmouseout=function () {
+            pop[i].style.display="none";
+        }
+    }
+    console.log(sor);
 }

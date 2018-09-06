@@ -262,7 +262,9 @@
 	width: 124px;
 	height: 21px;	
 	position: absolute;
-	top: 14px;
+	top: 0;
+	bottom: 0;
+	margin:auto 0;
 	right: 62px;
 }
 .header .searvh .words .words1{
@@ -394,11 +396,14 @@
     background: pink;
     display: none;
 }
-.banner .container .list .clear .list1:nth-child(2){
+.banner .container .list .clear .list1 .cover1{
+	width: 744px;
+}
+.banner .container .list .clear .list1 .cover2{
 	width: 496px;
 }
-.banner .container .list .clear .list1:nth-child(4){
-	width: 744px;
+.banner .container .list .clear .list1 .cover3{
+	width: 248px;
 }
 .banner .container .dot{
 	width: 86px;
@@ -584,11 +589,12 @@
 .box .top button{
 	width: 40px;
 	height: 25px;
-	border:1px solid #333;
+	border:1px solid #e0e0e0;
 	float: right;
 	margin-top: 15px;
 	background: #fff;
 	outline: none;
+	color:#e0e0e0;
 }
 .box .box-kuai{
 	width: 100%;
@@ -1070,9 +1076,10 @@ del{
 	outline: none;
 	width: 40px;
 	height: 25px;
-	border:1px solid #333;
+	border:1px solid #e0e0e0;
 	float: right;
 	margin-top: 15px;
+	color:#e0e0e0;
 }
 /* 为你推荐模块 */
 .box1 .container .recommend{
@@ -1526,6 +1533,9 @@ del{
 	color: #ff6700;
 	text-decoration: none;
 }
+.foot .container .footer .col .follow1 i{
+	font-size: 12px;
+}
 .foot .container .footer .link dd .rel:hover{
 	color: #ff6700;
 }
@@ -1615,6 +1625,7 @@ del{
 	height: 39px;
 	background: #fff;
 	border-bottom: 1px solid #f5f5f5;
+	position: relative;
 }
 .bar-s .bar-top .bar-sort a{
 	text-decoration: none;
@@ -1645,4 +1656,36 @@ del{
 }
 .bar-s .bar-totop:hover{
 	color: #ff6700;
+}
+.bar-s .bar-pop{
+	position:absolute;
+	bottom: 8px;
+	left: -125px;
+	width: 126px;
+	height: 27px;
+	display: none;
+}
+.bar-s .bar-pop .bar-arrow{
+	background: url("../imgs/arrow.png") no-repeat left 38px ;
+	float: right;
+	background-position: left center;
+	height: 27px;
+	z-index: 2;
+	width: 11px;
+}
+.bar-s .bar-pop .bar-pop-text{
+	padding: 0 8px;
+	width: 82px;
+	height: 27px;
+	line-height: 27px;
+	background:#fff;
+	border:1px solid #f5f5f5;
+	color: #757575;
+	font-size: 14px;
+	text-align: center;
+	float: right;
+}
+.red{
+	color:#ff6700;
+
 }
