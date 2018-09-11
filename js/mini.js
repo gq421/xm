@@ -2,9 +2,8 @@ window.onload=function() {
     var lis = document.getElementsByClassName("list1");
     var son = document.getElementsByClassName("cover");
     var item = document.getElementsByClassName("item-box");
-    var link = document.getElementsByClassName("nav-item");
-    console.log(lis);
-    console.log(son);
+    var link = document.getElementsByClassName("nav-in");
+    console.log(link);
 //遍历每个li
     for (let i = 0; i < lis.length; i++) {
 //当鼠标移入每个li的操作
@@ -21,17 +20,23 @@ window.onload=function() {
         }
     }
     for (let i = 0; i < link.length; i++) {
-        link[i].onmouseover = function () {
-            for (let j = 0; j < item.length; j++) {
-                item[j].style.display = "none";
-            }
-            item[i].style.display = "block";
-        }
+        // link[i].onmouseover = function () {
+        //     for (let j = 0; j < item.length; j++) {
+        //         item[j].style.height = '210px';
+        //         item[j].style.boxShadow = '0 3px 4px 1px rgba(0,0,0,0.1)';
+        //     }
+        //     item[i].style.height = '210px';
+        // }
         link[i].onmouseout = function () {
-            item[i].style.display = "none";
+            item[i].style.height = 0;
+            item[i].style.boxShadow="none";
         }
     }
 
+    // head_buy.onmouseleave = function () {
+    //     head_buy_box.style.height = 0;
+    //     head_buy_box.style.boxShadow = 'none';
+    // }
     // 透明度轮播图
     let imgs = document.querySelectorAll(".imgss");
     let dots = document.querySelectorAll(".progress");
@@ -236,4 +241,48 @@ window.onload=function() {
         }
     }
     console.log(sor);
+
+    //倒计时
+    let spans=document.querySelectorAll(".hour");
+    console.log(spans);
+    setData();
+    setInterval(setData,1000);
+    function setData(){
+        let arr=fn();
+        spans.forEach((v,index)=>{
+            v.innerHTML=arr[index];
+        })
+    }
+    function fn(){
+        //获取现在的时间
+        let now=new Date();
+        //获取放假的时间
+        let future=new Date(2018,9,1);
+        //相差的时间转化为毫秒
+        let time=Math.floor((future.getTime()-now.getTime())/1000);
+
+        let arr=[];
+        let hour=Math.floor(time%(30*24*360)%(24*60*60)/(60*60));
+        // arr.push(hour);
+        if (Math.floor(hour/10)==0){
+            arr.push('0' + hour);
+        } else{
+            arr.push(hour);
+        }
+        let min=Math.floor(time%(30*24*360)%(24*60*60)%(60*60)/60);
+        if (Math.floor(min/10)==0){
+            arr.push('0'+min);
+        } else {
+            arr.push(min);
+        }
+        // arr.push(min);
+        let s=Math.floor(time%(30*24*360)%(24*60*60)%(60*60)%60);
+        // arr.push(s);
+        if (Math.floor(s/10)==0){
+            arr.push('0'+s);
+        } else {
+            arr.push(s);
+        }
+        return arr;
+    }
 }
